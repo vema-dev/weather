@@ -1,0 +1,103 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  width: 100%;
+}
+
+nav .search {
+  display: flex;
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-v);
+}
+
+li a:hover {
+  text-decoration: none;
+}
+
+.listbox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.listbox li {
+  position: relative;
+}
+
+.listbox__item {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid var(--color-bg);
+  border-radius: 1rem;
+  justify-content: space-between;
+}
+
+.listbox__item:hover {
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.listbox__item:hover .badge {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.listbox li .badge {
+  pointer-events:all;
+  width: 22px;
+  height: 22px;
+  color: rgb(209, 45, 45);
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  z-index: 1;
+  font-size: 2rem;
+  opacity: 0;
+  transition: var(--transition);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.listbox li .badge svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.font-big {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.icon {
+  font-size: 2.2rem;
+}
+
+@media screen  and (max-width: 1200px) {
+  .listbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen  and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav .search {
+    margin-top: 1rem;
+  }
+  .listbox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
